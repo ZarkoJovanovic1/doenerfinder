@@ -13,7 +13,7 @@ function App() {
   }, [])
 
   const fetchDoener = () => {
-    fetch("http://localhost:5000/api/doener")
+    fetch(`${API_BASE}/api/doener`)
       .then(res => res.json())
       .then(data => setDoener(data))
       .catch(err => console.error(err))
@@ -44,7 +44,7 @@ function App() {
 
     const url = editingDoener
       ? `http://localhost:5000/api/doener/${editingDoener._id}`
-      : "http://localhost:5000/api/doener"
+      : `${API_BASE}/api/doener`
 
     const method = editingDoener ? "PUT" : "POST"
 
