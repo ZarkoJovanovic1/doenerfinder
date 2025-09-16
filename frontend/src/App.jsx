@@ -24,6 +24,7 @@ function App() {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
+
   const getCoordinates = async (address) => {
     const res = await fetch(`http://localhost:5000/api/geocode?address=${encodeURIComponent(address)}`)
     const data = await res.json()
