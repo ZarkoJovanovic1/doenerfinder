@@ -1,12 +1,14 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const doenerSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  location: { type: String, required: true },
-  coordinates: {
-    lat: Number,
-    lng: Number
+  address: { type: String },
+  coords: {
+    lat: { type: Number },
+    lon: { type: Number }
   }
 });
 
-module.exports = mongoose.model("Doener", doenerSchema);
+const Doener = mongoose.model("Doener", doenerSchema);
+
+export default Doener;
